@@ -16,8 +16,8 @@ public class TwoNumberSum {
 
     public static void main(String[] args) {
 
-        HashMap<Object, Object> map = new HashMap<>();
-        map.containsKey("1");
+        twoSumSolution1(new int[]{1,2,3,4,8,9}, 9);
+        twoSumSolution2(new int[]{1,2,3,4,7,5}, 9);
 
     }
 
@@ -28,10 +28,11 @@ public class TwoNumberSum {
      * @param target target
      * @return 时间复杂度 f(n^2)  空间复杂度f(1)
      */
-    public int[] twoSumSolution1(int[] nums, int target) {
+    private static int[] twoSumSolution1(int[] nums, int target) {
         for (int i = 0; i < nums.length; i++) {
             for (int j = 0; j < nums.length; j++) {
                 if (nums[i] + nums[j] == target) {
+                    System.out.println(i + "," + j);
                     return new int[]{i, j};
                 }
             }
@@ -47,11 +48,12 @@ public class TwoNumberSum {
      * @param target target
      * @return  时间复杂度 f(n)  空间复杂度f(n)
      */
-    public int[] twoSumSolution2(int[] nums, int target) {
+    private static int[] twoSumSolution2(int[] nums, int target) {
 
         Map<Integer, Integer> map = new HashMap();
         for (int i = 0; i < nums.length; i++) {
             if (map.containsKey(target - nums[i])) {
+                System.out.println(i + "," + map.get(target - nums[i]));
                 return new int[]{i, map.get(target - nums[i])};
             }
 

@@ -2,7 +2,8 @@ package com.durian.leetcode;
 
 /**
  * @author ying.jiang
- * @desc  求中位数
+ * @desc  中位数 :将一个集合划分为两个长度相等的子集，其中一个子集中的元素总是大于另一个子集中的元素。：
+ *
  * 给定两个大小为 m 和 n 的有序数组 nums1 和 nums2。
  *
  * 请你找出这两个有序数组的中位数，并且要求算法的时间复杂度为 O(log(m + n))。
@@ -37,6 +38,8 @@ public class FindMedianSortedArrays {
 
     /**
      * 中位数
+     * 1、特殊情况处理：当nums1最大值小于nums2最小值；当nums2最大值小于nums1最小值；
+     *
      * @param nums1 nums1
      * @param nums2 nums2
      * @return 时间复杂度：O(min(m,n))  空间复杂度：O(min(m,n))
@@ -48,6 +51,12 @@ public class FindMedianSortedArrays {
 
         /**
          * 1、特殊情况处理：当nums1最大值小于nums2最小值；当nums2最大值小于nums1最小值；
+         *  2、普通情况处理：
+         *              将两个数组放在一起，结构类似：
+         *            数组A:      1  2  3  5       2  4  6
+         *            数组B:      3  6  7  8       4  6  7 9
+         *            在数组A和B中各找到一个位置pa,pb,保证pa,pb将两个组个个数平分；当pa左边的值小于pb右边的值
+         *            且pb左边的值小于pa右边的值时，中位数为pa,pb左边最大值与pa,pb右边最小值之和除2
          */
         if (nums1[nums1.length - 1] < nums2[0]) {
             return (nums1[nums1.length - 1] + nums2[0])/2d;

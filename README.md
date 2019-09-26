@@ -7,6 +7,7 @@
 ### 0x02、中等
 - [两数相加](https://github.com/DurianCoder/leetcode/blob/master/src/main/java/com/durian/leetcode/AddTwoNumbers.java)
 - [无重复字符的最长子串](https://github.com/DurianCoder/leetcode/blob/master/src/main/java/com/durian/leetcode/LengthOfLongestSubStr.java)
+- [最长回文子串](https://github.com/DurianCoder/leetcode/blob/master/src/main/java/com/durian/leetcode/LongestPalindrome.java)
 
 ### 0x03、困难
 

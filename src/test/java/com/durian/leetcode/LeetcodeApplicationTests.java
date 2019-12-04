@@ -11,6 +11,8 @@ public class LeetcodeApplicationTests {
 
     @Test
     public void contextLoads() {
+
+
     }
 
 }

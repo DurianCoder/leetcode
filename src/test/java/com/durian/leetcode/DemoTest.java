@@ -10,14 +10,34 @@ import java.time.LocalDateTime;
  */
 public class DemoTest {
     public static void main(String[] args) {
-        LocalDateTime afterDate = LocalDateTime.now().plusDays(4);
-        LocalDateTime beforeDate = LocalDateTime.now().minusDays(4);
-        System.out.println(afterDate);
-        System.out.println(beforeDate);
+        System.out.println(getApplyDateDesc(LocalDateTime.now().plusSeconds(10)));
+        System.out.println(getApplyDateDesc(LocalDateTime.now().plusMinutes(10)));
+        System.out.println(getApplyDateDesc(LocalDateTime.now().plusDays(10)));
+        System.out.println(getApplyDateDesc(LocalDateTime.now().plusHours(10)));
 
-        System.out.println(Duration.between(LocalDateTime.now().minusHours(1), afterDate).toDays());
-        System.out.println(Duration.between(LocalDateTime.now().minusHours(1), beforeDate).toDays());
-        System.out.println(Duration.between(LocalDateTime.now(),LocalDateTime.now()).toDays());
+    }
+
+
+    private static String getApplyDateDesc(LocalDateTime endTime) {
+        Duration duration = Duration.between(LocalDateTime.now(), endTime);
+        long hours = duration.toHours();
+        long days = duration.toDays();
+        long minutes = duration.toMinutes();
+
+        if (LocalDateTime.now().isAfter(endTime)) {
+            return "(认购已结束)";
+        }
+        if (days > 0) {
+            return "(还剩" + days + "天)";
+        }
+        if (hours > 0) {
+            return "(还剩" + hours + "小时)";
+        }
+
+        if (minutes > 0) {
+            return "(还剩" + minutes + "分钟)";
+        }
+        return "(还剩" + 1 + "分钟)";
     }
 
 }

@@ -18,6 +18,8 @@ package com.durian.leetcode;
  * 来源：力扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/longest-palindromic-substring
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+ *
+ * 查找字符串中最长回文子串  https://blog.csdn.net/csdnnews/article/details/82920678
  * @date 2019-09-26-19:19:00
  */
 public class LongestPalindrome {

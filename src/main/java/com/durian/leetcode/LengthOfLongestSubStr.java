@@ -20,9 +20,9 @@ public class LengthOfLongestSubStr {
 //            System.out.println(i);
 //        }
 
-        System.out.println(lengthOfLongestSubstring("aaa"));
-        System.out.println(lengthOfLongestSubstring("sasdaa"));
-        System.out.println(lengthOfLongestSubstring("sdfagdeaa"));
+        System.out.println(lengthOfLongestSubstringByASCII("aaa"));
+        System.out.println(lengthOfLongestSubstringByASCII("sasdaa"));
+        System.out.println(lengthOfLongestSubstringByASCII("sdfagdeaa"));
     }
 
 

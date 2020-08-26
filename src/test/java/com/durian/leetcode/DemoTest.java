@@ -1,7 +1,10 @@
 package com.durian.leetcode;
 
+import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 /**
  * @author ying.jiang
@@ -10,11 +13,15 @@ import java.time.LocalDateTime;
  */
 public class DemoTest {
     public static void main(String[] args) {
-        System.out.println(getApplyDateDesc(LocalDateTime.now().plusSeconds(10)));
-        System.out.println(getApplyDateDesc(LocalDateTime.now().plusMinutes(10)));
-        System.out.println(getApplyDateDesc(LocalDateTime.now().plusDays(10)));
-        System.out.println(getApplyDateDesc(LocalDateTime.now().plusHours(10)));
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat simpleDateFormat1 = new SimpleDateFormat("YYYY-MM-dd");
+        System.out.println(simpleDateFormat.format(new Date()));
+        System.out.println(simpleDateFormat1.format(new Date()));
 
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        DateTimeFormatter dateTimeFormatter1 = DateTimeFormatter.ofPattern("YYYY-MM-dd");
+        System.out.println(LocalDateTime.now().format(dateTimeFormatter));
+        System.out.println(LocalDateTime.now().format(dateTimeFormatter1));
     }
 
 
